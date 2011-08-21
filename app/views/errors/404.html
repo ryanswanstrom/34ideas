@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Page not found' /}
+
+<article>
+<h2>Not Found</h2>
+#{if play.mode.name() == 'DEV'}
+<p>#{404 result /}</p>
+#{/if}
+#{else}
+    <p>
+        Please try the #{a @Application.index() }home page #{/a}.
+    </p>
+#{/else}
+
+</article>

@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Unknown Error Occurred' /}
+
+<article>
+#{if play.mode.name() == 'DEV'}
+<h2>Error Occurred</h2>
+<p>#{500 exception /}</p>
+#{/if}
+#{else}
+    <h1>Oops, an error occured</h1>
+    #{if exception instanceof play.exceptions.PlayException}
+        <p>
+            Please try the #{a @Application.index() }home page #{/a}.
+            This exception has been logged with id <strong>${exception.id}</strong>.
+        </p>
+    #{/if}
+#{/else}
+
+</article>

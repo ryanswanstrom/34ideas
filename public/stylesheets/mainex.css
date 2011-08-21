@@ -1,0 +1,161 @@
+BODY {
+    margin-top: 20px;
+    padding: 0;
+    background: url(/public/images/img01.gif) repeat-x left top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #6D6D6D;
+    height: 100%;
+}
+
+a:link {
+    color: #0094E0;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: #0094E0;
+}
+
+a:visited {
+    color: #0094E0;
+}
+A H1 {
+    text-decoration:none;
+    color: #5F9D10;
+}
+
+header a h4 {
+    margin: 0;
+    padding: 0 0 0 100px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #6D6D6D;
+}
+H1,H2,H3 {
+    margin: 0;
+    text-transform: lowercase;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    color: #006EA6;
+
+}
+h1 {
+    letter-spacing: -1px;
+    font-size: 35px;
+    margin: 0;
+    padding: 5px 0 0 100px;
+    font-size: 40px;
+    color: #0099E8;
+}
+
+h2 {
+    font-size: 26px;
+    color: #0094E0;
+}
+p, ul, ol {
+    margin: 10px 20px;
+    text-align: justify;
+    line-height: 26px;
+}
+
+
+p.info {
+    font-size: 1em;
+    text-align: right;
+    margin: -5px 0 0 0;
+}
+
+p.percent {
+    width: 50px;
+    margin-top: -25px;
+    margin-left: -67px;
+    padding-left: 12px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #283900;
+}
+p.addnew {
+    text-align: center;
+}
+[role] > article {
+    width: 900px;
+    margin: 0 auto;
+    background: url(/public/images/img07.jpg) no-repeat left 11px;
+    padding: 20px 0 0 0;
+}
+
+[role] > article > header {
+    height: 52px;
+    width: 800px;
+    margin: 10px 20px;
+    padding:0px 0px 5px 60px;
+    border-bottom: 1px dashed #D1D1D1;
+    background: url(/public/images/img04.gif) no-repeat left top;
+
+}
+
+[role] > article > div {
+    display: table;
+    margin: auto;
+}
+[role] > article > div > form {
+    display: table-cell;
+    padding: 3em;
+    width: 9em;
+}
+
+.submit {
+    padding: 10px 20px;
+    border: 1px dashed #FFFFFF;
+    border-radius:.5em;
+    background:#8BCB2F;
+    margin-bottom: .75em;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 9em;
+}
+
+.submit:hover {
+    cursor: pointer;
+
+}
+
+.error {
+    color: #D8000C;
+}
+
+HEADER {
+    width: 900px;
+    margin: 0 auto 20px auto;
+    height: 100px;
+    background-color: blue;
+    background: url(/public/images/logo.png) no-repeat left top;
+}
+
+FOOTER {
+    width: 900px;
+    margin: 80px auto 30px auto;
+    background: url(/public/images/img07.jpg) no-repeat left 11px;
+    color: #353535;
+    font-size: 12px;
+    background-color: yellow;
+}
+
+footer p {
+    padding: 20px 10px 30px 10px;
+    text-align:center;
+}
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -100px; /* Set footer height. */
+}
+footer, .push {
+    height: 100px; /* Set footer height. */
+    /* clear: both; */ /* Muti-column fix.*/
+}

@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Popular ideas' /}
+
+<article>
+
+    <h2>Popular ${topic.title}</h2>
+    #{list items:ideas, as:'idea'}
+    <div>
+        <p>${idea.txt.nl2br()}</p>
+        <p class="info">${idea.approval} %</p>
+    </div>
+    #{/list}
+
+
+
+</article>

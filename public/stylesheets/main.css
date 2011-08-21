@@ -1,0 +1,98 @@
+BODY {
+    margin:auto;
+    font:12px/1.5 Arial;
+    padding:2px 2em;
+    width:60em;
+    background:#E3E3E3;
+    color: #333;
+}
+
+A {
+    color: #333;
+    text-decoration:underline;
+}
+A H1 {
+    text-decoration:none;
+
+}
+H1,H2,H3 {
+    color: #345e9b;
+
+}
+H1 span {
+    color: #616161;
+}
+H1 {
+    margin:0px 0;
+    font-size:1.5em;
+}
+H2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+H3 {
+    font-size:1.8em;
+    text-align: center;
+}
+H2 A {
+    color: #345e9b;
+}
+p {
+    font-size: 1.5em;
+    color: #616161;
+}
+
+p.info {
+    font-size: 1em;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* add the fancy borders */
+[role] > SECTION {
+    padding:0 2em 1em;
+    border:.1em solid #616161;
+    border-radius:.5em;
+    background:#fff;
+    margin-bottom: 1.5em;
+}
+
+[role] > SECTION {
+    margin:2em 1em;
+    width: 56em;
+    text-align: center
+}
+
+[role] > SECTION > div {
+    display: table;
+    margin: auto;
+}
+[role] > SECTION > div > form {
+    display: table-cell;
+    padding: 3em;
+    width: 9em;
+}
+
+.submit {
+    padding: .5em 1em;
+    border-radius:.5em;
+    background:#345e9b;
+    margin-bottom: .75em;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.submit:hover {
+    cursor: pointer;
+
+}
+
+.error {
+    color: #D8000C;
+}
+
+FOOTER {
+    padding: 1em 0 1em 0;
+    text-align:center;
+}

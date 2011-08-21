@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Newest ideas' /}
+
+<article>
+
+    <h2>Newest ${topic.title}</h2>
+    #{list items:ideas, as:'idea'}
+    <div>
+        <p>${idea.txt.nl2br()}</p>
+        <p class="info">${idea.created.since(true)}</p>
+    </div>
+    #{/list}
+
+
+    
+</article>

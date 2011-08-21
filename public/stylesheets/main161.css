@@ -1,0 +1,92 @@
+BODY {
+    margin:auto;
+    font:12px/1.5 Arial;
+    padding:2px 2em;
+    width:60em;
+    background: #FFF;
+    color: #009ECE;
+}
+
+A {
+    color: #009ECE;
+    text-decoration:underline;
+}
+A H1 {
+    text-decoration:none;
+
+}
+H1 span {
+    color: #9CCF31;
+}
+H1 {
+    margin:0px 0;
+    font-size:1.5em;
+}
+H2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+H3 {
+    font-size:1.8em;
+    text-align: center;
+}
+p {
+    font-size: 1.5em;
+}
+
+p.info {
+    font-size: 1em;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* add the fancy borders */
+[role] > SECTION {
+    padding:0 2em 1em;
+    margin-bottom: 1.5em;
+}
+
+[role] > SECTION {
+    margin:2em 1em;
+    width: 56em;
+    text-align: center
+}
+
+[role] > SECTION > div {
+    display: table;
+    margin: auto;
+}
+[role] > SECTION > div > form {
+    display: table-cell;
+    padding: 3em;
+    width: 9em;
+}
+
+.submit {
+    padding: .5em 1em;
+    border-radius:.5em;
+    background: #FF9E00;
+    margin-bottom: .75em;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    width: 9em;
+}
+
+.submit:hover {
+    cursor: pointer;
+
+}
+
+.error {
+    color: #D8000C;
+}
+
+HEADER {
+    border-bottom: thin solid #009ECE;
+}
+
+FOOTER {
+    padding: 1em 0 1em 0;
+    text-align:center;
+}

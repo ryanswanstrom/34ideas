@@ -1,0 +1,197 @@
+Topic(books):
+  path: children-books
+  title: Children's Books
+  txt: Do you have any ideas for children's books? Share the idea and see if anyone else would like the book.
+  created: 2011-07-08
+
+Topic(bedtime):
+  path: children-bedtime
+  title: Children's Bedtime Thoughts
+  txt: What should your children think about before going to sleep? No one likes to go to bed thinking about something bad. Here are some ideas of what to think about.
+  created: 2011-07-08
+
+Topic(startups):
+  path: startups
+  title: Startup Ideas
+  txt: This topic is for new business ideas.  These could be online startups or physical businesses.
+  created: 2011-07-08
+
+Idea(voteideas):
+  txt: Create a website to vote on ideas. Oh Yeah, this is it.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-08
+  path: vote-on-ideas
+
+Idea(cereal):
+  txt: Start a restaurant that sells only cereal.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-08
+  path: cereal
+
+Idea(sweetcorn):
+  txt: Sell sweetcorn door-to-door. Children or adults could load up a wagon of fresh sweetcorn, walk through neighborhoods, and sell the sweetcorn.  An extra fee could also be charged to shuck the corn. I believe a child could fund his/her entire summer with only a couple weeks of work.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-11
+  path: sweetcorn
+
+Idea(kidsports):
+  txt: Create a website for locally buying/selling/renting used children's sporting goods equipment. A child will rarely wearout a pair of shoes in one season, but the child will most likely out grow the shoes before the next season.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-12
+  path: children-sporting-goods
+
+Idea(xmas):
+  txt: Write a book about the Christmas Tree ornament that gets put on the back of the tree.
+  topic: books
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-08
+  path: christmas-ornament
+
+Idea(sew):
+  txt: Write a book about a sewing machine.  Include all the other characters such as a pin chushion, needle, and thread. The adventures could include sewing something.
+  topic: books
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-08
+  path: sew
+
+Idea(monkey):
+  txt: Pretend you are a monkey and you can climb all the trees in town. Imagine all that you would see.
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-08
+  path: monkey
+
+Idea(5storybuilding):
+  txt: A building with 5 floors was just built.  It is going to be an all girls building.  It is your job to decide what to put on each floor.
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-10
+  path: 5-story-building
+
+Idea(nameyourpet):
+  txt: If we were to get a pet, what would you name it?
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-11
+  path: name-your-pet
+
+Idea(farmchores):
+  txt: Pretend you live on a farm with cows, pigs, chickens, other animals, a barn, and lots of plants. What chores would you be most excited to do in the morning?
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-12
+  path: farm-chores
+
+Idea(ant):
+  txt: Pretend an anthill full of ants discover a cheeseball just outside the anthill. Imagine the party the ant would throw.
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-13
+  path: anthill
+
+Idea(count):
+  txt: How high can you count?
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-14
+  path: count
+
+Idea(goanywhere):
+  txt: If you could go anywhere, where would you go?
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-15
+  path: go-anywhere
+
+Idea(hairsalon):
+  txt: Suppose you grow up and own a hair salon.  What would the salon look like and what types of hair would you cut. Would it be for old people, young people, only girls, or something else.
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-23
+  path: hair-salon
+
+Idea(pinkbus):
+  txt: You have a large pink bus the size of a school bus.  It is pink on the outside and pink/purple on the inside. The bus can go anywhere you want. Whom would you bring along? Where would you go?
+  topic: bedtime
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-22
+  path: pink-bus
+
+Idea(kidsportsphotos):
+  txt: Create a new way to take photos for children's sports.  Here is an idea. Take action photos of the players during a game.  Then post those photos on the internet and have parents order the photos they want.  Then parents will get to see the photos before they buy, and the photos will be much more fun and memorable.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-16
+  path: children-sports-photos
+
+Idea(lovenotes):
+  txt: My wife and daughter frequently leave me hand-written notes. It would be nice to have a way to snap a photo of the note and save it on the internet. The photos of the notes would have to remain private. There are photo sites on the internet, but I do not know one that specializes in this type of photos.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-17
+  path: personal-notes
+
+Idea(kidshirts):
+  txt: Create a website that sells only children's shirts. Put funny messages on the shirts. Something like "My dad can beat up your dad." The shirts would have to a high quality and well-designed.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-18
+  path: kids-shirts
+
+Idea(webcertify):
+  txt: Create a website that certifies other websites as suitable for children.  You could charge sites to be certified and give them a badge to display on the bottom of the site.  Also, a directory of children's certified sites could be created. This idea could be expanded to create a general rating system for websites.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-20
+  path: web-certification
+
+Idea(txtbudget):
+  txt: Create a budgeting application that allows a user to text in the amount they spend at a store. The application would then alert the user when he/she has exceded the budget for the week.
+  topic: startups
+  bVotes: 0
+  gVotes: 0
+  approval: 0
+  created: 2011-07-23
+  path: text-budget

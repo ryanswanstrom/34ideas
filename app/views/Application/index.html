@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Vote on ideas' /}
+
+<article>
+    #{list items:topics, as:'topic'}
+    <header>
+        <h2>#{a @Ideas.randomIdea(topic.path)}${topic.title} #{/a}</h2>
+    </header>
+        <p>${topic.txt}</p>
+    #{/list}
+</article>

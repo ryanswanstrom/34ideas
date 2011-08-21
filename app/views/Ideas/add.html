@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Share an idea' /}
+
+<article>
+    <div>
+        #{form @Ideas.create()}
+            <h2>${idea.topic.title}</h2>
+            #{if errors}
+            <div class="error">
+                #{error 'idea.txt' /}
+            </div>
+            #{/if}
+            <input type="hidden" name="topicId" value="${idea.topic.id}" />
+            <textarea rows="6" cols="80" name="txt" value="${idea.txt}"></textarea>
+            <input type="submit" value="Submit" class="submit" />
+        #{/form}
+    </div>
+</article>
+
