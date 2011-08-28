@@ -21,7 +21,7 @@ public class Ideas extends Controller {
      * @param id
      */
     public static void show(String topicPath, String ideaPath) {
-        Idea idea = Idea.find("byPath", ideaPath).first();
+        Idea idea = Idea.find("byPathAndValid", ideaPath, Valid.Y).first();
         notFoundIfNull(idea);
         render(idea);
     }
@@ -60,7 +60,7 @@ public class Ideas extends Controller {
      * @param path the topic path
      */
     public static void add(String path) {
-        Topic topic = Topic.find("byPath", path).first();
+        Topic topic = Topic.find("byPathAndValid", path, Valid.Y).first();
         notFoundIfNull(topic);
         Idea idea = new Idea();
         idea.topic = topic;
@@ -88,9 +88,9 @@ public class Ideas extends Controller {
 
     public static void newest(String topicPath) {
         notFoundIfNull(topicPath);
-        Topic topic = Topic.find("byPath", topicPath).first();
+        Topic topic = Topic.find("byPathAndValid", topicPath, Valid.Y).first();
         notFoundIfNull(topic);
-        List<Idea> ideas = Idea.find("byTopic", topic).order("-created").fetchAll();
+        List<Idea> ideas = Idea.find("byTopicAndValid", topic, Valid.Y).order("-created").fetchAll();
 
         render(topic, ideas);
 
@@ -99,9 +99,9 @@ public class Ideas extends Controller {
 
     public static void popular(String topicPath) {
         notFoundIfNull(topicPath);
-        Topic topic = Topic.find("byPath", topicPath).first();
+        Topic topic = Topic.find("byPathAndValid", topicPath, Valid.Y).first();
         notFoundIfNull(topic);
-        List<Idea> ideas = Idea.find("byTopic", topic).order("-approval").fetchAll();
+        List<Idea> ideas = Idea.find("byTopicAndValid", topic, Valid.Y).order("-approval").fetchAll();
 
         render(topic, ideas);
 

@@ -22,9 +22,21 @@
             <header>
                 #{a @Application.index()}
                 <h1><span>34</span>Ideas</h1>
-                <h4>find the next great idea</h4>
+                <h4>Share and Vote ideas</h4>
                 #{/a}
+
+            <div>
+                #{if idea}
+                    #{a @Ideas.newest(idea.topic.path)}Newest#{/a}
+                    #{a @Ideas.popular(idea.topic.path)}Popular#{/a}
+                #{/if}
+                #{else}
+                    &nbsp;
+                #{/else}
+            </div>
             </header>
+
+            
 
             <section role="main">
                 #{doLayout /}
@@ -36,7 +48,8 @@
         <p>
             Site built by <a href="http://about.me/ryanswanstrom">Ryan Swanstrom</a> | Privacy Policy - everything is public
             <br />
-            Design modified from excess at <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+            Design modified from excess at <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.
+        </p>
     </footer>
 
 </body>

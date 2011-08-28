@@ -4,13 +4,17 @@
 <article>
     <header>
         <h2>${idea.topic.title}</h2>
-        <p class="percent"> ${idea.approval}% </p>
-        <p class="info">${idea.created.since(true)}</p>
     </header>
-    <p>${idea.txt.nl2br()}</p>
+    <div class="idea">
+        <div class="top">
+        <span class="left"> ${idea.approval}% out of ${idea.gVotes + idea.bVotes} votes</span>
+        <span class="right">${idea.created.since(true)}</span>
+        </div>
+        <p>${idea.txt.nl2br()}</p>
+    </div>
 
 
-    <!--div>
+    <div>
         #{form @Ideas.vote()}
         <input type="hidden" value="GOOD" name="value" />
         <input type="hidden" value="${idea.id}" name="id" />
@@ -26,5 +30,5 @@
     </div>
     <p class="addnew">
     #{a @Ideas.add(idea.topic.path)}Create a new idea for ${idea.topic.title} #{/a}
-    </p -->
+    </p>
 </article>

@@ -1,11 +1,14 @@
 #{extends 'main.html' /}
-#{set title:'34ideas Vote on ideas' /}
+#{set title:'34ideas Share and Vote ideas' /}
 
 <article>
-    #{list items:topics, as:'topic'}
-    <header>
-        <h2>#{a @Ideas.randomIdea(topic.path)}${topic.title} #{/a}</h2>
-    </header>
-        <p>${topic.txt}</p>
-    #{/list}
+    <h2>Share ideas / Vote on ideas <br/> Click on a Topic Below</h2>
+    <div class="topics">
+        #{list items:topics, as:'topic'}
+            <div class="topic">
+                <h3>#{a @Ideas.randomIdea(topic.path)}${topic.title}#{/a}</h3>
+                <p>${topic.txt}</p>
+            </div>
+        #{/list}
+    </div>
 </article>

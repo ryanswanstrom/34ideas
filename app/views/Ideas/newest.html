@@ -6,7 +6,7 @@
     <h2>Newest ${topic.title}</h2>
     #{list items:ideas, as:'idea'}
     <div>
-        <p>${idea.txt.nl2br()}</p>
+        <p>#{a @Ideas.show(idea.topic.path, idea.path)} ${idea.txt.nl2br()} #{/a} </p>
         <p class="info">${idea.created.since(true)}</p>
     </div>
     #{/list}

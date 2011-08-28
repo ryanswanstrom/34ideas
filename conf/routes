@@ -6,7 +6,7 @@
 GET     /                                       Application.index
 GET     /random-ideas/{topicPath}               Ideas.randomIdea
 GET     /ideas/{topicPath}/{ideaPath}           Ideas.show
-*    /vote                      Ideas.vote
+*       /vote                                   Ideas.vote
 GET     /add/idea/{path}                        Ideas.add
 POST    /add/idea                               Ideas.create
 GET     /newest/{topicPath}                     Ideas.newest

@@ -8,6 +8,10 @@ BODY {
     height: 100%;
 }
 
+html {
+    height: 100%;
+}
+
 a:link {
     color: #0094E0;
 }
@@ -53,30 +57,16 @@ h1 {
 h2 {
     font-size: 26px;
     color: #0094E0;
+    text-align: center;
+    text-transform: uppercase;
 }
 p, ul, ol {
     margin: 10px 20px;
     text-align: justify;
     line-height: 26px;
+    font-size: 16px;
 }
 
-
-p.info {
-    font-size: 1em;
-    text-align: right;
-    margin: -5px 0 0 0;
-}
-
-p.percent {
-    width: 50px;
-    margin-top: -25px;
-    margin-left: -67px;
-    padding-left: 12px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: #283900;
-}
 p.addnew {
     text-align: center;
 }
@@ -92,9 +82,7 @@ p.addnew {
     width: 800px;
     margin: 10px 20px;
     padding:0px 0px 5px 60px;
-    border-bottom: 1px dashed #D1D1D1;
-    background: url(/public/images/img04.gif) no-repeat left top;
-
+    background-image: none;
 }
 
 [role] > article > div {
@@ -136,26 +124,76 @@ HEADER {
     background: url(/public/images/logo.png) no-repeat left top;
 }
 
+header > div {
+    padding-left: 600px;
+}
+
 FOOTER {
     width: 900px;
-    margin: 80px auto 30px auto;
+    margin: 40px auto 20px auto;
     background: url(/public/images/img07.jpg) no-repeat left 11px;
     color: #353535;
-    font-size: 12px;
-    background-color: yellow;
 }
+
 
 footer p {
     padding: 20px 10px 30px 10px;
     text-align:center;
+    font-size: 12px;
 }
 #wrap {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -100px; /* Set footer height. */
+    margin: 0 auto -130px; /* Set footer height. */
 }
 footer, .push {
     height: 100px; /* Set footer height. */
     /* clear: both; */ /* Muti-column fix.*/
+}
+
+.idea {
+    border-top: 1px dashed #D1D1D1;
+    width: 800px;
+}
+
+.idea p {
+    background: url(/public/images/img04.gif) no-repeat left center;
+    padding: 0px 10px 10px 55px;
+    min-height: 52px;
+}
+.idea > div {
+    display: table;
+}
+.idea > div > span {
+    display: table-cell;
+}
+.right {
+    font-size: 12px;
+    text-align: right;
+    width: 400px;
+}
+
+.left {
+    width: 500px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #283900;
+}
+
+.topics {
+    display: table;
+    padding: 20px 20px 5px 20px;
+}
+.topic {
+    display: table-cell;
+    text-align: center;
+}
+.topic a {
+    color: #5F9D10;
+}
+
+.topic h3 {
+    font-weight: bold;
 }
