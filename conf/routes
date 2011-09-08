@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /random-ideas/{topicPath}               Ideas.randomIdea
+GET     /random/{topicPath}                     Ideas.randomIdea
 GET     /ideas/{topicPath}/{ideaPath}           Ideas.show
 *       /vote                                   Ideas.vote
 GET     /add/idea/{path}                        Ideas.add

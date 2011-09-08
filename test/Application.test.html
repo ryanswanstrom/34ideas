@@ -4,8 +4,109 @@
     // Open the home page, and check that no error occured
     open('/')
     assertNotTitle('Application error')
-    assertTitle('34ideas Vote on ideas')
+    assertTitle('34ideas Share and Vote ideas')
     verifyTextPresent('34')
     verifyTextPresent('ideas')
     verifyTextPresent('Ryan Swanstrom')
+#{/selenium}
+
+#{selenium}
+    open('/random/startups')
+    assertNotTitle('Application error')
+    verifyTextPresent('Startup Ideas')
+#{/selenium}
+
+#{selenium}
+    open('/add/idea/startups')
+    assertTitle('34ideas Share an idea for Startup Ideas')
+    assertNotTitle('Application error')
+    verifyTextPresent('Startup Ideas')
+#{/selenium}
+
+#{selenium}
+    open('/thispagedoesnotExist')
+    assertTitle('34ideas Page not found')
+    verifyTextPresent('Not Found')
+#{/selenium}
+
+#{selenium}
+    open('/newest/startups')
+    assertNotTitle('Application error')
+    assertTitle('34ideas Newest Startup Ideas')
+    verifyTextPresent('cereal')
+#{/selenium}
+
+#{selenium}
+    open('/popular/startups')
+    assertNotTitle('Application error')
+    assertTitle('34ideas Popular Startup Ideas')
+    verifyTextPresent('cereal')
+#{/selenium}
+
+*{ verify that a we can open startup page and
+    view newest  }*
+#{selenium}
+    // open home page
+    open('/')
+    clickAndWait('link=Startup Ideas')
+    assertNotTitle('Application error')
+    verifyTextPresent('Startup Ideas')
+    verifyTextPresent('out of')
+    // click newest
+    clickAndWait('link=Newest')
+    verifyTextPresent('cereal')
+    clickAndWait('link=*cereal*')
+    verifyTextPresent('cereal')
+    verifyTextPresent('out of')
+#{/selenium}
+
+*{ verify that a we can open startup page and
+    view popular  }*
+#{selenium}
+    // open home page
+    open('/')
+    clickAndWait('link=Startup Ideas')
+    assertNotTitle('Application error')
+    verifyTextPresent('Startup Ideas')
+    verifyTextPresent('out of')
+    //click Popular
+    clickAndWait('link=Popular')
+    verifyTextPresent('cereal')
+    clickAndWait('link=*cereal*')
+    verifyTextPresent('cereal')
+    verifyTextPresent('out of')
+#{/selenium}
+
+*{ verify that a we can vote }*
+#{selenium}
+    // open home page
+    open('/ideas/startups/vote-on-ideas')
+    assertNotTitle('Application error')
+    verifyTextPresent('Startup Ideas')
+    verifyTextPresent('out of')
+    verifyTextPresent('vote on ideas')
+    //vote good
+    clickAndWait('//input[@value='Good Idea?']')
+    // a random page should show up
+    verifyTextPresent('Startup Ideas')
+    verifyTextPresent('out of')
+    // go back to the cereal page
+    open('/ideas/startups/vote-on-ideas')
+    clickAndWait('//input[@value='Bad Idea?']')
+    // a random page should show up
+    verifyTextPresent('Startup Ideas')
+    verifyTextPresent('out of')
+#{/selenium}
+
+*{ add a new idea }*
+#{selenium}
+    open('/ideas/startups/vote-on-ideas')
+    clickAndWait('link=Submit Your Own*')
+    clickAndWait('//input[@value='Submit']')
+    verifyTextPresent('Text is required')
+    type('txt', 'Create a website all about horseradish')
+    clickAndWait('//input[@value='Submit']')
+    verifyTextNotPresent('Text is required')
+    verifyTextPresent('horseradish')
+    verifyTextPresent('0% out of 0 votes')
 #{/selenium}

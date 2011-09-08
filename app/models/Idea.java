@@ -61,6 +61,16 @@ public class Idea extends TitleModel {
             }
         }
     }
+
+    public <T extends Model> T vote(String value) {
+        if (Vote.GOOD.toString().equals(value)) {
+            this.gVotes++;
+        } else {
+            this.bVotes++;
+        }
+        this.approval = 100*(this.gVotes)/(this.gVotes + this.bVotes);
+        return this.save();
+    }
     
     @Override
     public String toString() {

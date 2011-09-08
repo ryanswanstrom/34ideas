@@ -45,13 +45,7 @@ public class Ideas extends Controller {
     public static void vote(String id, String value) {
         Idea idea = Idea.findById(id);
         notFoundIfNull(idea);
-        if (Vote.GOOD.toString().equals(value)) {
-            idea.gVotes++;
-        } else {
-            idea.bVotes++;
-        }
-        idea.approval = 100*(idea.gVotes)/(idea.gVotes + idea.bVotes);
-        idea.save();
+        idea.vote(value);
         randomIdea(idea.topic.path);
     }
 
@@ -101,7 +95,7 @@ public class Ideas extends Controller {
         notFoundIfNull(topicPath);
         Topic topic = Topic.find("byPathAndValid", topicPath, Valid.Y).first();
         notFoundIfNull(topic);
-        List<Idea> ideas = Idea.find("byTopicAndValid", topic, Valid.Y).order("-approval").fetchAll();
+        List<Idea> ideas = Idea.find("byTopicAndValid", topic, Valid.Y).order("-approval").order("-gVotes").fetchAll();
 
         render(topic, ideas);
 
