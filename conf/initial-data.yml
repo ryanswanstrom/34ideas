@@ -195,3 +195,8 @@ Idea(txtbudget):
   approval: 0
   created: 2011-07-23
   path: text-budget
+
+Comment(goodComment):
+  txt: What a great idea.  Maybe it should link to a bank account.
+  idea: txtbudget
+

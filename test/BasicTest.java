@@ -1,3 +1,4 @@
+import models.Comment;
 import models.Idea;
 import models.Topic;
 import models.Vote;
@@ -56,6 +57,17 @@ public class BasicTest extends UnitTest {
         idea = idea.vote("unknown string");
         assertEquals("should be 1 good vote", Long.valueOf(1), idea.gVotes);
         assertEquals("should be 2 bad votes", Long.valueOf(2), idea.bVotes);
+    }
+
+    @Test
+    public void testComment() {
+        assertEquals("should be 1 comment", 1, Comment.count());
+        Comment comment = new Comment();
+        assertFalse("no txt or idea", comment.validateAndSave());
+        comment.idea = Idea.find().first();
+        assertFalse("txt is null", comment.validateAndSave());
+        comment.txt = "There are many sites like this.";
+        assertTrue("this should work", comment.validateAndSave());
     }
 
 }

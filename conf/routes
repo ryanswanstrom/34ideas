@@ -11,6 +11,7 @@ GET     /add/idea/{path}                        Ideas.add
 POST    /add/idea                               Ideas.create
 GET     /newest/{topicPath}                     Ideas.newest
 GET     /popular/{topicPath}                    Ideas.popular
+POST    /add/comment                            Comments.create
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

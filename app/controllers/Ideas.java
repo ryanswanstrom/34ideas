@@ -2,10 +2,10 @@ package controllers;
 
 import java.util.List;
 import java.util.Random;
+import models.Comment;
 import models.Idea;
 import models.Topic;
 import models.Valid;
-import models.Vote;
 import play.data.validation.Validation;
 import play.mvc.Controller;
 
@@ -23,7 +23,9 @@ public class Ideas extends Controller {
     public static void show(String topicPath, String ideaPath) {
         Idea idea = Idea.find("byPathAndValid", ideaPath, Valid.Y).first();
         notFoundIfNull(idea);
-        render(idea);
+        Comment comment = new Comment();
+        comment.idea = idea;
+        render(idea, comment);
     }
 
     /**
@@ -63,7 +65,8 @@ public class Ideas extends Controller {
 
     /**
      *
-     * @param path the topic path
+     * @param topicId
+     * @param txt
      */
     public static void create(String topicId, String txt) {
         Topic topic = Topic.findById(topicId);
@@ -95,7 +98,7 @@ public class Ideas extends Controller {
         notFoundIfNull(topicPath);
         Topic topic = Topic.find("byPathAndValid", topicPath, Valid.Y).first();
         notFoundIfNull(topic);
-        List<Idea> ideas = Idea.find("byTopicAndValid", topic, Valid.Y).order("-approval").order("-gVotes").fetchAll();
+        List<Idea> ideas = Idea.find("byTopicAndValid", topic, Valid.Y).order("-gVotes").order("-approval").fetchAll();
 
         render(topic, ideas);
 

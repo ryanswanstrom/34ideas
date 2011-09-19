@@ -1,0 +1,31 @@
+<div class="idea">
+    <div class="top">
+    <span class="left"> ${_idea.approval}% out of ${_idea.gVotes + _idea.bVotes} votes</span>
+    <span class="right">${_idea.created.since(true)}</span>
+    </div>
+    <p>
+        #{if !_full}
+            #{a @Ideas.show(_idea.topic.path, _idea.path)} ${_idea.txt.nl2br()} #{/a}
+        #{/if}
+        #{else}
+            ${_idea.txt.nl2br()}
+        #{/else}
+    </p>
+</div>
+
+#{if _full}
+    <div>
+        #{form @Ideas.vote()}
+        <input type="hidden" value="GOOD" name="value" />
+        <input type="hidden" value="${_idea.id}" name="id" />
+        <input type="submit" value="Good Idea?" class="submit" />
+        #{/form}
+
+
+        #{form @Ideas.vote()}
+        <input type="hidden" value="BAD" name="value" />
+        <input type="hidden" value="${_idea.id}" name="id" />
+        <input type="submit" value="Bad Idea?" class="submit" />
+        #{/form}
+    </div>
+#{/if}

@@ -2,6 +2,7 @@ package models;
 
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Reference;
+import java.util.List;
 import java.util.UUID;
 import org.apache.commons.lang.StringUtils;
 import play.data.validation.Max;
@@ -70,6 +71,10 @@ public class Idea extends TitleModel {
         }
         this.approval = 100*(this.gVotes)/(this.gVotes + this.bVotes);
         return this.save();
+    }
+
+    public List<Comment> getComments() {
+        return Comment.find("byIdeaAndValid", this, Valid.Y).order("created").fetchAll();
     }
     
     @Override

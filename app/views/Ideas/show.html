@@ -5,30 +5,31 @@
     <header>
         <h2>${idea.topic.title}</h2>
     </header>
-    <div class="idea">
-        <div class="top">
-        <span class="left"> ${idea.approval}% out of ${idea.gVotes + idea.bVotes} votes</span>
-        <span class="right">${idea.created.since(true)}</span>
-        </div>
-        <p>${idea.txt.nl2br()}</p>
-    </div>
 
+    #{idea full:true,idea:idea/}
 
+    <h3>Comments</h3>
+    #{list idea.getComments() }
+    <p>
+        ${_.txt.nl2br()}
+    </p>
+    #{/list}
     <div>
-        #{form @Ideas.vote()}
-        <input type="hidden" value="GOOD" name="value" />
-        <input type="hidden" value="${idea.id}" name="id" />
-        <input type="submit" value="Good Idea?" class="submit" />
-        #{/form}
+        #{form @Comments.create()}
 
+            #{ifError 'comment.txt'}
+                <div class="error">
+                #{error 'comment.txt' /}
+                </div>
+            #{/ifError}
 
-        #{form @Ideas.vote()}
-        <input type="hidden" value="BAD" name="value" />
-        <input type="hidden" value="${idea.id}" name="id" />
-        <input type="submit" value="Bad Idea?" class="submit" />
+            <input type="hidden" name="ideaId" value="${idea.id}"/>
+            <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
+            <input type="submit" value="Submit" class="submit" />
         #{/form}
     </div>
+    
     <p class="addnew">
-    #{a @Ideas.add(idea.topic.path)}Submit Your Own ${idea.topic.title} #{/a}
+        #{a @Ideas.add(idea.topic.path)}Submit Your Own ${idea.topic.title} #{/a}
     </p>
 </article>

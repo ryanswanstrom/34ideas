@@ -1,5 +1,5 @@
 # Application dependencies
 
 require:
-    - play -> morphia 1.2.1beta6
+    - play -> morphia 1.2.3beta1
     - play -> cloudbees 0.2.2

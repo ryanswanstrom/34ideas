@@ -2,15 +2,10 @@
 #{set title:'34ideas Popular ' + topic /}
 
 <article>
-
-    <h2>Popular ${topic.title}</h2>
+    <header>
+        <h2>Popular ${topic.title}</h2>
+    </header>
     #{list items:ideas, as:'idea'}
-    <div>
-        <p>#{a @Ideas.show(idea.topic.path, idea.path)} ${idea.txt.nl2br()} #{/a}</p>
-        <p class="info">${idea.approval} %</p>
-    </div>
+        #{idea full:false,idea:idea/}
     #{/list}
-
-
-
 </article>
