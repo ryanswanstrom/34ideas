@@ -24,16 +24,6 @@
                 <h1><span>34</span>Ideas</h1>
                 <h4>Share and Vote ideas</h4>
                 #{/a}
-
-            <div>
-                #{if idea}
-                    #{a @Ideas.newest(idea.topic.path)}Newest#{/a}
-                    #{a @Ideas.popular(idea.topic.path)}Popular#{/a}
-                #{/if}
-                #{else}
-                    &nbsp;
-                #{/else}
-            </div>
             </header>
 
             
