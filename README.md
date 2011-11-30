@@ -6,4 +6,5 @@ This is source code for a web site.
 
 # Deploy
 
-1. play bees:app:deploy --%prod
+1. play deps --sync
+1. 

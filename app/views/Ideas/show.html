@@ -15,7 +15,7 @@
     </p>
     #{/list}
     <div>
-        #{form @Comments.create()}
+        #{form @Comments.create(idea.id)}
 
             #{ifError 'comment.txt'}
                 <div class="error">
@@ -23,7 +23,6 @@
                 </div>
             #{/ifError}
 
-            <input type="hidden" name="ideaId" value="${idea.id}"/>
             <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
             <input type="submit" value="Submit" class="submit" />
         #{/form}

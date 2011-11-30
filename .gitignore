@@ -1,5 +1,4 @@
 # forget these directories
-lib*
 modules*
 precompiled*
 test-result*
@@ -8,5 +7,3 @@ logs*
 nbproject*
 tmp*
 
-#dont include the config file
-conf/application.conf
