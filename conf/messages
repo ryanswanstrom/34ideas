@@ -2,5 +2,10 @@
 # For example, for French create a messages.fr file
 #
 
+since.seconds = %d seconds ago
+since.minutes = %d minutes ago
+since.hours = %d hours ago
 since.days = %d days ago
-since.format = dd MMMM yyyy
+since.months = %d months ago
+since.years = %d years ago
+since.format = MMMM dd, yyyy
