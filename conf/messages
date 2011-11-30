@@ -3,3 +3,4 @@
 #
 
 since.days = %d days ago
+since.format = dd MMMM yyyy
