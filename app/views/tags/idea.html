@@ -5,10 +5,10 @@
     </div>
     <p>
         #{if !_full}
-            #{a @Ideas.show(_idea.topic.path, _idea.path)} ${_idea.txt.nl2br()} #{/a}
+            #{a @Ideas.show(_idea.topic.path, _idea.path)} ${_idea.txt.escape().nl2br()} #{/a}
         #{/if}
         #{else}
-            ${_idea.txt.nl2br()}
+            ${_idea.txt.escape().nl2br()}
         #{/else}
     </p>
 </div>
