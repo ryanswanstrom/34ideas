@@ -28,7 +28,7 @@
                 </div>
             #{/ifError}
 
-            <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
+            <textarea rows="3" cols="60" name="comment.txt">${comment.txt.escape()}</textarea>
             <input type="submit" value="Submit" class="submit" />
         #{/form}
     </div>    
