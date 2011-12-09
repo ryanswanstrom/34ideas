@@ -16,7 +16,7 @@
     <h3>Comments</h3>
     #{list idea.getComments() }
     <p>
-        ${_.txt.nl2br()}
+        ${_.txt.escape().nl2br()}
     </p>
     #{/list}
     <div>
@@ -28,7 +28,7 @@
                 </div>
             #{/ifError}
 
-            <textarea rows="3" cols="60" name="comment.txt">${comment.txt.escape()}</textarea>
+            <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
             <input type="submit" value="Submit" class="submit" />
         #{/form}
     </div>    
