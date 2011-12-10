@@ -35,7 +35,7 @@ public class Ideas extends Controller {
     public static void randomIdea(String topicPath) {
         Topic topic = Topic.find("byPathAndValid", topicPath, Valid.Y).first();
         notFoundIfNull(topic);
-        Idea idea = Idea.find("byTopic", topic).from(new Random().nextInt((int)(Idea.count("byTopic", topic)))).order("created").first();
+        Idea idea = Idea.find("byTopicAndValid", topic, Valid.Y).from(new Random().nextInt((int)(Idea.count("byTopicAndValid", topic, Valid.Y)))).order("created").first();
         notFoundIfNull(idea);
         show(idea.topic.path, idea.path);
     }
