@@ -4,9 +4,11 @@
 <article>
     <h2>Share ideas / Vote on ideas <br/> Click on a Topic Below</h2>
     <div class="topics">
-        The site has been taken down.
         #{list items:topics, as:'topic'}
-            
+            <div class="topic">
+                <h3>#{a @Ideas.randomIdea(topic.path)}${topic.title}#{/a}</h3>
+                <p>${topic.txt}</p>
+            </div>
         #{/list}
     </div>
 </article>
