@@ -6,8 +6,7 @@
         <h2>${idea.topic.title}</h2>
         <div>
             #{a @Ideas.newest(idea.topic.path)}Newest#{/a} |
-            #{a @Ideas.popular(idea.topic.path)}Popular#{/a} |
-            #{a @Ideas.add(idea.topic.path)}Submit Your Own Idea#{/a}
+            #{a @Ideas.popular(idea.topic.path)}Popular#{/a} 
         </div>
     </header>
 
@@ -19,7 +18,7 @@
         ${_.txt.escape().nl2br()}
     </p>
     #{/list}
-    <div>
+    <!--div>
         #{form @Comments.create(idea.id)}
 
             #{ifError 'comment.txt'}
@@ -31,5 +30,5 @@
             <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
             <input type="submit" value="Submit" class="submit" />
         #{/form}
-    </div>    
+    </div-->    
 </article>
