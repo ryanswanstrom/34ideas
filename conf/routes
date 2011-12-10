@@ -3,23 +3,21 @@
 # ~~~~
 
 # Home page
-#GET     /                                       Application.index
-#GET     /random/{topicPath}                     Ideas.randomIdea
-#GET     /ideas/{topicPath}/{ideaPath}           Ideas.show
-#*       /vote                                   Ideas.vote
+GET     /                                       Application.index
+GET     /random/{topicPath}                     Ideas.randomIdea
+GET     /ideas/{topicPath}/{ideaPath}           Ideas.show
+*       /vote                                   Ideas.vote
 #GET     /add/idea/{path}                        Ideas.add
 #POST    /add/idea                               Ideas.create
-#GET     /newest/{topicPath}                     Ideas.newest
-#GET     /popular/{topicPath}                    Ideas.popular
-#POST    /add/comment/{ideaId}                   Comments.create
+GET     /newest/{topicPath}                     Ideas.newest
+GET     /popular/{topicPath}                    Ideas.popular
+POST    /add/comment/{ideaId}                   Comments.create
 
 # Ignore favicon requests
-#GET     /favicon.ico                            404
+GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
 # Catch all
 #*       /{controller}/{action}                  {controller}.{action}
-
-*       /                                       Application.index
