@@ -30,6 +30,9 @@ public class Users extends Controller {
     private static final int HASH_ITERS = 1153;
 
     public static void register() {
+        if (Security.isConnected()) {
+            Users.show(Security.connected());
+        }
         render();
     }
 
@@ -83,7 +86,7 @@ public class Users extends Controller {
         }
         // send verificationEmail
         SimpleEmail msg = new SimpleEmail();
-        msg.setFrom("sender@zenexity.fr");
+        msg.setFrom("support@34ideas.com");
         msg.addTo(u.email);
         msg.setSubject("email verification");
         msg.setMsg("Please click (or copy and paste into a browser) the link to verify your email. " + Request.current().host + "/verify/email/" + u.uuid);

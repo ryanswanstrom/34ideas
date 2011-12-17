@@ -4,7 +4,7 @@
 <header><h2>Please Register</h2></header>
 
 <article id="form">
-	#{form @UsersOpen.add() }		
+	#{form @Users.add() }		
 		<p id="username-field">
 			<label for="username" >Username</label>
 			<input type="text" name="username" value="${flash.username}"/> #{ifError 'username'} <span class="error">#{error 'username' /}</span> #{/ifError}

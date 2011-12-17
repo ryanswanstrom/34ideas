@@ -1,7 +1,7 @@
 <div class="idea">
     <div class="top">
     <span class="left"> ${_idea.approval}% out of ${_idea.gVotes + _idea.bVotes} votes</span>
-    <span class="right">${_idea.created.since(true)} by ${_idea.user}</span>
+    <span class="right">${_idea.created.since(true)} by #{if _idea.user}${_idea.user}#{/if}#{else}Guest#{/else}</span>
     </div>
     <p>
         #{if !_full}
