@@ -31,6 +31,8 @@ public class Idea extends TitleModel {
     public Topic topic;
     @URL
     public String source;  // url of where the idea came from
+    @Reference
+    public User user;
 
     public Idea() {
         this("");

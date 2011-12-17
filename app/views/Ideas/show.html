@@ -7,6 +7,9 @@
         <div>
             #{a @Ideas.newest(idea.topic.path)}Newest#{/a} |
             #{a @Ideas.popular(idea.topic.path)}Popular#{/a} 
+            #{if session.get('username')}
+                | #{a @IdeasSecure.add(idea.topic.path)}Create New#{/a}
+            #{/if}
         </div>
     </header>
 
@@ -14,21 +17,23 @@
 
     <h3>Comments</h3>
     #{list idea.getComments() }
-    <p>
-        ${_.txt.escape().nl2br()}
+    <p> 
+        ${_.txt.escape().nl2br()} #{if _.user}<i>by ${_.user}</i>#{/if}
     </p>
     #{/list}
-    <!--div>
-        #{form @Comments.create(idea.id)}
+        #{if session.get('username')}
+            <div>
+                #{form @CommentsSecure.create(idea.id)}
 
-            #{ifError 'comment.txt'}
-                <div class="error">
-                #{error 'comment.txt' /}
-                </div>
-            #{/ifError}
+                    #{ifError 'comment.txt'}
+                        <div class="error">
+                        #{error 'comment.txt' /}
+                        </div>
+                    #{/ifError}
 
-            <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
-            <input type="submit" value="Submit" class="submit" />
-        #{/form}
-    </div-->    
+                    <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
+                    <input type="submit" value="Submit" class="submit" />
+                #{/form}
+            </div>
+        #{/if}
 </article>

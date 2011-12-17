@@ -21,12 +21,12 @@ public class Bootstrap extends Job {
     public void doJob() {
         if (play.Play.mode == play.Play.mode.DEV) {
             System.out.println("delete all");
-            MorphiaFixtures.deleteAllModels();
+            //MorphiaFixtures.deleteAllModels();
 
         }
         if (Idea.count() == 0) {
             System.out.println("loading yaml");
-            MorphiaFixtures.loadModels("initial-data.yml");
+            //MorphiaFixtures.loadModels("initial-data.yml");
         }
         Model.ds().ensureIndexes();
     }

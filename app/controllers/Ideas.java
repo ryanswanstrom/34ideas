@@ -51,37 +51,6 @@ public class Ideas extends Controller {
         randomIdea(idea.topic.path);
     }
 
-    /**
-     *
-     * @param path the topic path
-     */
-    public static void add(String path) {
-        Topic topic = Topic.find("byPathAndValid", path, Valid.Y).first();
-        notFoundIfNull(topic);
-        Idea idea = new Idea();
-        idea.topic = topic;
-        render(idea);
-    }
-
-    /**
-     *
-     * @param topicId
-     * @param txt
-     */
-    public static void create(String topicId, String txt) {
-        Topic topic = Topic.findById(topicId);
-        notFoundIfNull(topic);
-        Idea idea = new Idea();
-        idea.txt = txt;
-        idea.topic = topic;
-
-        if (!idea.validateAndSave() ) {
-            params.flash();
-            Validation.keep();
-            Ideas.add(topic.path);
-        }
-        show(idea.topic.path, idea.path);
-    }
 
     public static void newest(String topicPath) {
         notFoundIfNull(topicPath);

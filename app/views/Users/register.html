@@ -1,0 +1,29 @@
+#{extends 'main.html' /}
+#{set 'title'} Register #{/set}
+
+<header><h2>Please Register</h2></header>
+
+<article id="form">
+	#{form @UsersOpen.add() }		
+		<p id="username-field">
+			<label for="username" >Username</label>
+			<input type="text" name="username" value="${flash.username}"/> #{ifError 'username'} <span class="error">#{error 'username' /}</span> #{/ifError}
+		</p>
+		<p id="username-field">
+			<label for="email" >Email</label>
+			<input type="text" name="email" value="${flash.email}"/> #{ifError 'email'} <span class="error">#{error 'email' /}</span>   #{/ifError}
+		</p>
+		<p id="username-field">
+			<label for="password" >Password</label>
+			<input type="password" name="password"/> #{ifError 'password'} <span class="error">#{error 'password' /}</span>  #{/ifError}
+		</p>
+		<p id="username-field">
+			<label for="pwConfirm" >Password confirmation</label> 
+			<input type="password" name="pwConfirm"/>  #{ifError 'pwConfirm'} <span class="error">#{error 'pwConfirm' /}</span>  #{/ifError}
+		</p>
+
+		<p id="signin-field">
+		<input type="submit" value="Register"/>
+		</p>
+	#{/form}
+</article>

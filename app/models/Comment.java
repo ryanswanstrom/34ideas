@@ -18,4 +18,7 @@ public class Comment extends BaseModel {
     @Required
     public Idea idea;
     
+    @Reference
+    public User user;
+    
 }

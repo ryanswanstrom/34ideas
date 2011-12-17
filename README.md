@@ -15,4 +15,5 @@ This is source code for a web site.
 1. heroku create somename --stack cedar
 1. heroku config:add FRAMEWORK_ID=prod USE_PRECOMPILED=true
 1. heroku config:add MONGO_URL=value MONGO_PORT=value MONGO_NAME=value MONGO_USER=value MONGO_PW=value
+1. heroku config:add EMAIL_USER=value EMAIL_PW=value
 1. git push heroku master

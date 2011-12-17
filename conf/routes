@@ -2,16 +2,27 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# Secure routes
+*       /                                       module:secure
+
 # Home page
 GET     /                                       Application.index
 GET     /random/{topicPath}                     Ideas.randomIdea
 GET     /ideas/{topicPath}/{ideaPath}           Ideas.show
 *       /vote                                   Ideas.vote
-#GET     /add/idea/{path}                        Ideas.add
-#POST    /add/idea                               Ideas.create
+GET     /add/idea/{path}                        IdeasSecure.add
+POST    /add/idea                               IdeasSecure.create
 GET     /newest/{topicPath}                     Ideas.newest
 GET     /popular/{topicPath}                    Ideas.popular
-POST    /add/comment/{ideaId}                   Comments.create
+POST    /add/comment/{ideaId}                   CommentsSecure.create
+
+#User
+GET     /profile/{username}                     Users.show
+GET	/register                               Users.register
+POST	/register                               Users.add
+GET     /verify/email/{uuid}                    Users.activate
+
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
