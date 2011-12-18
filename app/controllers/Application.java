@@ -17,20 +17,11 @@ public class Application extends Controller {
         render(topics);
     }
     
-    public static void fix(String username) {
+    public static void fix(String username, String key) {
         User user = User.find("byUsername", username).first();
-        Calendar cal = Calendar.getInstance();
-
-        // Subtract 10 days from the calendar
-        cal.add(Calendar.DATE, -10);
-        System.out.println("10 days ago: " + cal.getTime());
-        
-        List<Idea> ideas = Idea.q().filter("created <", cal.getTime()).asList();
-        for (Idea idea : ideas) {
-            System.out.println("idea: " + idea.txt);
-            idea.user = user;
-            idea.save();
-        }
+        Idea idea = Idea.findById(key);
+        idea.user = user;
+        idea.save();
         index();
     }
 
