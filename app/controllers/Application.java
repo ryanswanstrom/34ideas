@@ -17,12 +17,4 @@ public class Application extends Controller {
         render(topics);
     }
     
-    public static void fix(String username, String key) {
-        User user = User.find("byUsername", username).first();
-        Idea idea = Idea.findById(key);
-        idea.user = user;
-        idea.save();
-        index();
-    }
-
 }
