@@ -4,6 +4,7 @@
 
 # Secure routes
 *       /                                       module:secure
+GET     /fix/{username}                         Application.fix
 
 # Home page
 GET     /                                       Application.index
