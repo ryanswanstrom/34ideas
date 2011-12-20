@@ -1,10 +1,7 @@
 package controllers;
 
-import java.util.Calendar;
 import java.util.List;
-import models.Idea;
 import models.Topic;
-import models.User;
 import models.Valid;
 import play.mvc.*;
 

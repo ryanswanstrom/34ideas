@@ -1,0 +1,52 @@
+/* Foundation v2.1.3 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+BODY {
+    background: url(/public/images/img01.jpg) repeat-x left top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.logo {
+    margin-top: 10px;
+    background:  url(/public/images/logo.png) no-repeat;
+    padding-left: 100px;
+    height: 90px;
+    margin-bottom: 20px;
+}
+
+.ctr {
+    text-align: center;
+}
+
+.votes {
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+

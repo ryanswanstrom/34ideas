@@ -88,7 +88,7 @@ public class Users extends Controller {
         SimpleEmail msg = new SimpleEmail();
         msg.setFrom("support@34ideas.com");
         msg.addTo(u.email);
-        msg.setSubject("email verification");
+        msg.setSubject("Welcome to 34ideas");
         msg.setMsg("Please click (or copy and paste into a browser) the link to verify your email. " + Request.current().host + "/verify/email/" + u.uuid);
         Mail.send(msg);
         // add to flash

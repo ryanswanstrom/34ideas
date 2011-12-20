@@ -51,8 +51,8 @@ public class Security extends Secure.Security {
             }
 
         }
-        
-            Logger.info("user [%s] has a validated password [%s]", user.username, rVal);
+
+        Logger.info("user [%s] has a validated password [%s]", user.username, rVal);
         return rVal;
     }
 
@@ -88,4 +88,11 @@ public class Security extends Secure.Security {
 //        Logger.info("in onAuthenticated: %s", connected());
 //        UsersOpen.show(connected());
 //    }
+    
+    /**
+     * On logout, go to home page
+     */
+    public static void onDisconnected() {
+        Application.index();
+    }
 }

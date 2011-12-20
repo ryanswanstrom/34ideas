@@ -1,39 +1,73 @@
 #{extends 'main.html' /}
 #{set title:'34ideas ' + idea.topic /}
 
-<article>
-    <header>
-        <h2>${idea.topic.title}</h2>
+<div class="row">
+    <div class="eight columns">
+        <article>
+            <header>
+                <h2>${idea.topic.title}</h2>
+            </header>
+
+            #{idea full:true,idea:idea/}
+
+            <div class="row">
+                <div class="offset-by-two">                    
+                    <h3>Thoughts</h3>
+
+                    #{list idea.getComments() }
+                    <div class="row">
+                        <div class="twelve columns">
+                            <p> 
+                                ${_.txt.escape().nl2br()} #{if _.user}#{/if}
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="twelve columns">
+                                <div class="right">
+                                ${_.created.since(true)} by #{if _.user}#{a @Users.show(_.username)}${_.user}#{/a}#{/if}#{else} Guest#{/else}
+                                </div>
+                            </div>
+                            <hr/>
+                        </div>
+                    </div>
+                    #{/list}
+                    #{else}
+                      No one has any thought about this idea.  I bet you do.
+                    #{/else}
+
+                    #{if session.get('username')}
+                    <div>
+                        #{form @CommentsSecure.create(idea.id)}
+
+                        #{ifError 'comment.txt'}
+                        <div class="error">
+                            #{error 'comment.txt' /}
+                        </div>
+                        #{/ifError}
+
+                        <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
+                        <input type="submit" value="Submit" class="submit" />
+                        #{/form}
+                    </div>
+                    #{/if}
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="four columns">
+
+        <h4>About <i>${idea.topic.title}</i></h4>
+        <p>${idea.topic.txt.escape()}</p>
         <div>
             #{a @Ideas.newest(idea.topic.path)}Newest#{/a} |
             #{a @Ideas.popular(idea.topic.path)}Popular#{/a} 
             #{if session.get('username')}
-                | #{a @IdeasSecure.add(idea.topic.path)}Create New#{/a}
+            | #{a @IdeasSecure.add(idea.topic.path)}Create New#{/a}
             #{/if}
         </div>
-    </header>
-
-    #{idea full:true,idea:idea/}
-
-    <h3>Comments</h3>
-    #{list idea.getComments() }
-    <p> 
-        ${_.txt.escape().nl2br()} #{if _.user}<i>by ${_.user}</i>#{/if}
-    </p>
-    #{/list}
-        #{if session.get('username')}
-            <div>
-                #{form @CommentsSecure.create(idea.id)}
-
-                    #{ifError 'comment.txt'}
-                        <div class="error">
-                        #{error 'comment.txt' /}
-                        </div>
-                    #{/ifError}
-
-                    <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
-                    <input type="submit" value="Submit" class="submit" />
-                #{/form}
-            </div>
-        #{/if}
-</article>
+        
+        <h4>Got a new idea?</h4>
+        
+        <a href="@{IdeasSecure.add(idea.topic.path)}" class="nice round small green button">Add an idea</a>
+    </div>
+</div>
