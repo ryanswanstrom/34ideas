@@ -32,7 +32,7 @@
                     </div>
                     #{/list}
                     #{else}
-                    No one has any thoughts about this idea.  I bet you do.
+                    <p>No one has any thoughts about this idea.  I bet you do.</p>
                     #{/else}
 
                     #{if session.get('username')}
@@ -50,6 +50,9 @@
                         #{/form}
                     </div>
                     #{/if}
+                    #{else}
+                    <p> #{a @Secure.login()}Login#{/a} to add your own thoughts on this idea.</p>
+                    #{/else}
                 </div>
             </div>
         </article>
