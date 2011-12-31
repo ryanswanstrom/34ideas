@@ -6,7 +6,7 @@ import play.data.validation.MaxSize;
 import play.data.validation.MinSize;
 import play.data.validation.Required;
 
-@Entity
+@Entity(noClassnameStored = true)
 public class Comment extends BaseModel {
     
     @Required(message="Comment is required")

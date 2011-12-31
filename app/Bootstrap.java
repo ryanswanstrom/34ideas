@@ -20,12 +20,12 @@ public class Bootstrap extends Job {
     @Override
     public void doJob() {
         if (play.Play.mode == play.Play.mode.DEV) {
-            System.out.println("delete all");
+//            System.out.println("delete all");
             //MorphiaFixtures.deleteAllModels();
 
         }
         if (Idea.count() == 0) {
-            System.out.println("loading yaml");
+//            System.out.println("loading yaml");
             //MorphiaFixtures.loadModels("initial-data.yml");
         }
         Model.ds().ensureIndexes();

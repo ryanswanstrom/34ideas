@@ -1,29 +1,41 @@
 #{extends 'main.html' /}
 #{set 'title'} Register #{/set}
 
-<header><h2>Please Register</h2></header>
 
-<article id="form">
-	#{form @Users.add() }		
-		<p id="username-field">
-			<label for="username" >Username</label>
-			<input type="text" name="username" value="${flash.username}"/> #{ifError 'username'} <span class="error">#{error 'username' /}</span> #{/ifError}
-		</p>
-		<p id="username-field">
-			<label for="email" >Email</label>
-			<input type="text" name="email" value="${flash.email}"/> #{ifError 'email'} <span class="error">#{error 'email' /}</span>   #{/ifError}
-		</p>
-		<p id="username-field">
-			<label for="password" >Password</label>
-			<input type="password" name="password"/> #{ifError 'password'} <span class="error">#{error 'password' /}</span>  #{/ifError}
-		</p>
-		<p id="username-field">
-			<label for="pwConfirm" >Password confirmation</label> 
-			<input type="password" name="pwConfirm"/>  #{ifError 'pwConfirm'} <span class="error">#{error 'pwConfirm' /}</span>  #{/ifError}
-		</p>
+<div class="row">
+    <div class="four columns centered">
 
-		<p id="signin-field">
-		<input type="submit" value="Register"/>
-		</p>
-	#{/form}
-</article>
+        <article>
+            <header><h2>Please Register</h2></header>
+
+            #{form @Users.add(), class:'nice' }	
+            <label for="username" >Username</label>
+            <input type="text" name="username" value="${flash.username}" class="medium input-text"/> 
+            #{ifError 'username'} <small class="error">#{error 'username' /}</small> #{/ifError}
+
+            <label for="email" >Email</label>
+            <input type="text" name="email" value="${flash.email}" class="medium input-text"/> 
+            #{ifError 'email'} <small class="error">#{error 'email' /}</small>   #{/ifError}
+
+            <label for="password" >Password</label>
+            <input type="password" name="password" class="medium input-text"/> 
+            #{ifError 'password'} <small class="error">#{error 'password' /}</small>  #{/ifError}
+
+            <label for="pwConfirm" >Password confirmation</label> 
+            <input type="password" name="pwConfirm" class="medium input-text"/>  
+            #{ifError 'pwConfirm'} <small class="error">#{error 'pwConfirm' /}</small>  #{/ifError}
+
+            <br />
+
+            <input type="submit" value="Register" class="round button large blue"/>
+
+            #{/form}
+            
+            <br />            
+            <p> 
+                #{a @Application.privacy()}Privacy Policy#{/a} | 
+                #{a @Application.tos()}Terms of Service#{/a}
+            </p>
+        </article>
+    </div>
+</div>

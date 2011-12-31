@@ -199,4 +199,11 @@ Idea(txtbudget):
 Comment(goodComment):
   txt: What a great idea.  Maybe it should link to a bank account.
   idea: txtbudget
+  
+User(user100):
+  username: user100
+  password: Luc6h01Do413jbOPIAsKHrydoHVZBB3Hn1nxOHnUIZ0tcnb214L36YC2BqQUjkfz52tipyh8k5sM3+PNdgxesg==
+  salt: e1IelQywUtg=
+  active: Y
+  hashIters: 1153
 

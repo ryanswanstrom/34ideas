@@ -7,7 +7,6 @@
     assertTitle('34ideas Share and Vote ideas')
     verifyTextPresent('34')
     verifyTextPresent('ideas')
-    verifyTextPresent('Ryan Swanstrom')
 #{/selenium}
 
 #{selenium}
@@ -18,9 +17,8 @@
 
 #{selenium}
     open('/add/idea/startups')
-    assertTitle('34ideas Share an idea for Startup Ideas')
+    assertTitle('34ideas Login')
     assertNotTitle('Application error')
-    verifyTextPresent('Startup Ideas')
 #{/selenium}
 
 #{selenium}
@@ -47,8 +45,7 @@
     view newest  }*
 #{selenium}
     // open home page
-    open('/')
-    clickAndWait('link=Startup Ideas')
+    open('/random/startups')
     assertNotTitle('Application error')
     verifyTextPresent('Startup Ideas')
     verifyTextPresent('out of')
@@ -64,8 +61,7 @@
     view popular  }*
 #{selenium}
     // open home page
-    open('/')
-    clickAndWait('link=Startup Ideas')
+    open('/random/startups')
     assertNotTitle('Application error')
     verifyTextPresent('Startup Ideas')
     verifyTextPresent('out of')
@@ -79,7 +75,6 @@
 
 *{ verify that a we can vote }*
 #{selenium}
-    // open home page
     open('/ideas/startups/vote-on-ideas')
     assertNotTitle('Application error')
     verifyTextPresent('Startup Ideas')
@@ -98,15 +93,34 @@
     verifyTextPresent('out of')
 #{/selenium}
 
-*{ add a new idea }*
+#{selenium}
+    open('/ideas/startups/kids-shirts')
+    verifyTextNotPresent('Add Thought')
+    verifyTextPresent('shirts')
+#{/selenium}
+
+
+*{ test login, add a new idea, add a comment, logout }*
 #{selenium}
     open('/ideas/startups/vote-on-ideas')
-    clickAndWait('link=Submit Your Own*')
-    clickAndWait('//input[@value='Submit']')
+    clickAndWait('link=Add an idea')
+    
+    type('username', 'user100')
+    type('password', 'secret')
+    clickAndWait('//input[@value='Sign in']')
+    
+    clickAndWait('//input[@value='Add Your Idea']')
     verifyTextPresent('Text is required')
-    type('txt', 'Create a website all about horseradish')
-    clickAndWait('//input[@value='Submit']')
+    type('txt', 'Create a website all about horseradish')    
+    clickAndWait('//input[@value='Add Your Idea']')   
+    
     verifyTextNotPresent('Text is required')
     verifyTextPresent('horseradish')
     verifyTextPresent('0% out of 0 votes')
+    
+    type('comment.txt', 'This is a nice thought')    
+    clickAndWait('//input[@value='Add Thought']')      
+    verifyTextPresent('nice thought')
+    
+    open('/logout')
 #{/selenium}

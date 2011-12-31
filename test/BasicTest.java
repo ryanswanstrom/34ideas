@@ -69,5 +69,10 @@ public class BasicTest extends UnitTest {
         comment.txt = "There are many sites like this.";
         assertTrue("this should work", comment.validateAndSave());
     }
+    
+    @Test
+    public void testUser() {
+        
+    }
 
 }

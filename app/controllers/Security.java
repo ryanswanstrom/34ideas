@@ -92,7 +92,7 @@ public class Security extends Secure.Security {
     /**
      * On logout, go to home page
      */
-    public static void onDisconnected() {
-        Application.index();
-    }
+//    public static void onDisconnected() {
+//        Application.index();
+//    }
 }

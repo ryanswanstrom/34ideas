@@ -7,6 +7,8 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /terms                                  Application.tos
+GET     /privacy                                Application.privacy
 GET     /random/{topicPath}                     Ideas.randomIdea
 GET     /ideas/{topicPath}/{ideaPath}           Ideas.show
 *       /vote                                   Ideas.vote

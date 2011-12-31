@@ -1,0 +1,43 @@
+#{extends 'main.html' /}
+#{set title:'34ideas Login' /}
+
+<div class="row">
+    <div class="five columns centered">
+        <article>			
+            #{form @authenticate(), class:'nice'}
+
+            #{if flash.error}
+            <div class="alert-box error">
+                &{flash.error}
+            </div>
+            #{/if}
+            #{if flash.success}
+            <div class="alert-box success">
+                &{flash.success}
+            </div>
+            #{/if}
+
+            <label for="username">&{'secure.username'}</label>
+            <input type="text" name="username" id="username" value="${flash.username}" class="medium input-text" />
+
+            <label for="password">&{'secure.password'}</label>
+            <input type="password" name="password" id="password" value="" class="medium input-text"/>
+
+            <br />
+            <input type="submit" id="signin" value="&{'secure.signin'}" class="round button large blue" />
+
+            #{/form}
+            
+            <p>
+                Don't have an account? No worries. #{a @Users.register()}Register Now#{/a}
+            </p>
+            
+            <br />            
+            <p> 
+                #{a @Application.privacy()}Privacy Policy#{/a} | 
+                #{a @Application.tos()}Terms of Service#{/a}
+            </p>
+
+        </article>
+    </div>
+</div>

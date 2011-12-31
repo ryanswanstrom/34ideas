@@ -24,29 +24,29 @@
                         <div class="row">
                             <div class="twelve columns">
                                 <div class="right">
-                                ${_.created.since(true)} by #{if _.user}#{a @Users.show(_.username)}${_.user}#{/a}#{/if}#{else} Guest#{/else}
+                                    ${_.created.since(true)} by #{if _.user}#{a @Users.show(_.user.username)}${_.user}#{/a}#{/if}#{else} Guest#{/else}
                                 </div>
+                                <hr />
                             </div>
-                            <hr/>
                         </div>
                     </div>
                     #{/list}
                     #{else}
-                      No one has any thought about this idea.  I bet you do.
+                    No one has any thoughts about this idea.  I bet you do.
                     #{/else}
 
                     #{if session.get('username')}
                     <div>
-                        #{form @CommentsSecure.create(idea.id)}
+                        #{form @CommentsSecure.create(idea.id), class:'nice' }
 
                         #{ifError 'comment.txt'}
-                        <div class="error">
+                        <div class="alert-box error">
                             #{error 'comment.txt' /}
                         </div>
                         #{/ifError}
 
-                        <textarea rows="3" cols="60" name="comment.txt">${comment.txt}</textarea>
-                        <input type="submit" value="Submit" class="submit" />
+                        <textarea rows="3" cols="60" name="comment.txt" placeholder="What are your thoughts about this idea?">${comment.txt}</textarea>
+                        <input type="submit" value="Add Thought" class="nice round button small blue" />
                         #{/form}
                     </div>
                     #{/if}
@@ -61,13 +61,10 @@
         <div>
             #{a @Ideas.newest(idea.topic.path)}Newest#{/a} |
             #{a @Ideas.popular(idea.topic.path)}Popular#{/a} 
-            #{if session.get('username')}
-            | #{a @IdeasSecure.add(idea.topic.path)}Create New#{/a}
-            #{/if}
         </div>
-        
+
         <h4>Got a new idea?</h4>
-        
-        <a href="@{IdeasSecure.add(idea.topic.path)}" class="nice round small green button">Add an idea</a>
+
+        <a href="@{IdeasSecure.add(idea.topic.path)}" class="round small green button">Add an idea</a>
     </div>
 </div>

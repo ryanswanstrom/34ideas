@@ -1,15 +1,29 @@
 #{extends 'main.html' /}
 #{set title:'34ideas Newest ' + topic /}
 
-<article>
-    <header>
-        <h2>Newest ${topic.title}</h2>
+<div class="row">
+    <div class="eight columns">
+        <article>
+            <header>
+                <h2>Newest ${topic.title}</h2>
+            </header>
+            #{list items:ideas, as:'idea'}
+            #{idea full:false,idea:idea/}
+            #{/list}
+        </article>
+    </div>
+    <div class="four columns">
+
+        <h4>About <i>${idea.topic.title}</i></h4>
+        <p>${idea.topic.txt.escape()}</p>
         <div>
-            #{a @Ideas.newest(topic.path)}Newest#{/a} |
-            #{a @Ideas.popular(topic.path)}Popular#{/a} 
+            #{a @Ideas.newest(idea.topic.path)}Newest#{/a} |
+            #{a @Ideas.popular(idea.topic.path)}Popular#{/a} 
         </div>
-    </header>
-    #{list items:ideas, as:'idea'}
-        #{idea full:false,idea:idea/}
-    #{/list}
-</article>
+
+        <h4>Got a new idea?</h4>
+
+        <a href="@{IdeasSecure.add(idea.topic.path)}" class="nice round small green button">Add an idea</a>
+    </div>
+</div>
+

@@ -23,6 +23,13 @@ BODY {
     padding-bottom: 15px;
 }
 
+.good {
+    background: url(/public/images/check.png) 0 0 no-repeat;
+}
+.bad {
+    background: url(/public/images/cross.png) 0 0 no-repeat;
+}
+
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------

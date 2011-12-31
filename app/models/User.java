@@ -8,7 +8,7 @@ import java.util.UUID;
 import play.data.validation.Email;
 import play.data.validation.Required;
 
-@Entity
+@Entity(noClassnameStored = true)
 public class User extends BaseModel {
 
     @Required

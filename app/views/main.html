@@ -34,13 +34,20 @@
         <div class="container">
             <header>
                 <div class="row">
-                    <div class="twelve columns">
+                    <div class="eight columns">
                         #{a @Application.index()}
                         <div class="logo">
                             <h2>34ideas</h2>
                             <p>SHARE AND VOTE IDEAS</p>
                         </div>
                         #{/a}
+                    </div>
+                    <div class="four columns">
+                        <ul class="nav-bar">
+                            <li>#{a @Application.index()}Home#{/a}</li>
+                            <li>#{if session.get('username')}#{a @Users.show(session.get('username'))}Dashboard#{/a}#{/if}#{else}#{a @Users.register()}Register#{/a}#{/else}</li>
+                            <li>#{if session.get('username')}#{a @Secure.logout()}Logout#{/a}#{/if}#{else}#{a @Secure.login()}Login#{/a}#{/else}</li>
+                        </ul>
                     </div>
                 </div>
             </header>            

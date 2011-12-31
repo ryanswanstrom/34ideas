@@ -25,16 +25,16 @@
 <div class="row">
     <div class="six columns ctr">
         #{form @Ideas.vote()}
-        <input type="hidden" value="GOOD" name="value" />
-        <input type="hidden" value="${_idea.id}" name="id" />
-        <input type="submit" value="Good Idea?" class="nice round large blue button" />
+            <input type="hidden" value="GOOD" name="value" />
+            <input type="hidden" value="${_idea.id}" name="id" />
+            <input type="submit" value="Good Idea?" class="round large blue button good" />
         #{/form}
     </div>
     <div class="six columns ctr">
         #{form @Ideas.vote()}
-        <input type="hidden" value="BAD" name="value" />
-        <input type="hidden" value="${_idea.id}" name="id" />
-        <input type="submit" value="Bad Idea?" class="nice round large blue button" />
+            <input type="hidden" value="BAD" name="value" />
+            <input type="hidden" value="${_idea.id}" name="id" />
+            <input type="submit" value="Bad Idea?" class="round large blue button bad" />
         #{/form}
     </div>
 </div>

@@ -3,25 +3,25 @@
 
 <article>
     <header>
-    <div class="row centered">
-        <div class="twelve columns">
-            <div class="ctr">
-                <h2>Share ideas / Vote on ideas <br/> 
-                    Click on a Topic Below
-                </h2>
+        <div class="row">
+
+            <div class="twelve columns">
+                <div class="ctr">
+                    <h2>Click on a topic below</h2>
+                </div>
             </div>
         </div>
-    </div>
     </header>
     <div class="row">
         #{list items:topics, as:'topic'}
         <div class="four columns">
             <div class="panel">
-            <h3>${topic.title}</h3>
-            <p>${topic.txt}</p>
-            <center>
-            <a href="@{ideas.randomIdea(topic.path)}" class="nice round small blue button"> More Info</a>
-            </center>
+                <h3>${topic.title}</h3>
+                <p>${topic.txt}</p>
+                <center>
+                    <a href="@{ideas.randomIdea(topic.path)}" class="round medium blue button"> More Info</a>
+                </center>
+                <br />
             </div>
         </div>
         #{/list}
