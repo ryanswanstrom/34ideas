@@ -4,6 +4,7 @@ import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Reference;
 import java.util.List;
 import java.util.UUID;
+import models.Vote.VoteType;
 import org.apache.commons.lang.StringUtils;
 import play.data.validation.Max;
 import play.data.validation.Min;
@@ -66,11 +67,16 @@ public class Idea extends TitleModel {
     }
 
     public <T extends Model> T vote(String value) {
-        if (Vote.GOOD.toString().equals(value)) {
+        Vote vote = new Vote();
+        vote.idea = this;
+        if (VoteType.GOOD.toString().equals(value)) {
             this.gVotes++;
+            vote.type = VoteType.GOOD;
         } else {
             this.bVotes++;
+            vote.type = VoteType.BAD;
         }
+        vote.save();
         this.approval = 100*(this.gVotes)/(this.gVotes + this.bVotes);
         return this.save();
     }

@@ -116,7 +116,7 @@ public class Users extends Controller {
     public static void show(String username) {
         User user = User.find("byUsernameAndValid", username, Valid.Y).first();
         notFoundIfNull(user);
-        List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("created").fetchAll();
+        List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("-created").fetchAll();
         render(user, ideas);
     }
 

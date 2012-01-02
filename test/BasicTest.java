@@ -2,6 +2,7 @@ import models.Comment;
 import models.Idea;
 import models.Topic;
 import models.Vote;
+import models.Vote.VoteType;
 import org.junit.*;
 import play.data.validation.Validation;
 import play.test.*;
@@ -30,7 +31,6 @@ public class BasicTest extends UnitTest {
         assertEquals("should be 1 more topic", initial + 1 , Topic.count());
     }
 
-
     @Test
     public void addIdea() {
         long initial = Idea.count();
@@ -47,14 +47,19 @@ public class BasicTest extends UnitTest {
         Idea idea = Idea.find().first();
         assertEquals("should be no good votes", Long.valueOf(0), idea.gVotes);
         assertEquals("should be no bad votes", Long.valueOf(0), idea.bVotes);
+        
+        long voteCount = Vote.count();
 
-        idea = idea.vote(Vote.BAD.toString());
+        idea = idea.vote(VoteType.BAD.toString());
+        assertEquals("should be 1 more vote", voteCount + 1 , Vote.count());
         assertEquals("should be no good votes", Long.valueOf(0), idea.gVotes);
         assertEquals("should be 1 bad vote", Long.valueOf(1), idea.bVotes);
-        idea = idea.vote(Vote.GOOD.toString());
+        idea = idea.vote(VoteType.GOOD.toString());
+        assertEquals("should be 2 more vote", voteCount + 2 , Vote.count());
         assertEquals("should be 1 good vote", Long.valueOf(1), idea.gVotes);
         assertEquals("should be 1 bad vote", Long.valueOf(1), idea.bVotes);
         idea = idea.vote("unknown string");
+        assertEquals("should be 3 more vote", voteCount + 3 , Vote.count());
         assertEquals("should be 1 good vote", Long.valueOf(1), idea.gVotes);
         assertEquals("should be 2 bad votes", Long.valueOf(2), idea.bVotes);
     }
@@ -74,5 +79,4 @@ public class BasicTest extends UnitTest {
     public void testUser() {
         
     }
-
 }

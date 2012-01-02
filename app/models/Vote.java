@@ -1,3 +1,25 @@
 package models;
 
-public enum Vote {GOOD, BAD}
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Reference;
+import play.data.validation.Required;
+
+@Entity
+public class Vote extends BaseModel {
+
+    public enum VoteType {
+        GOOD, BAD
+    }
+    
+    @Reference
+    public User user;
+    
+    @Required
+    public VoteType type;
+    
+    @Reference
+    @Required
+    public Idea idea;
+    
+    
+}
