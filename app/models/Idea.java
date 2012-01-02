@@ -10,12 +10,14 @@ import play.data.validation.Min;
 import play.data.validation.Required;
 import play.data.validation.URL;
 import play.modules.morphia.Model;
+import play.modules.morphia.Model.AutoTimestamp;
 
 /**
  *
  * @author goof
  */
 @Entity(noClassnameStored=true)
+@AutoTimestamp
 public class Idea extends TitleModel {
 
     @Min(0)

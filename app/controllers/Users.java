@@ -5,6 +5,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Date;
 
+import java.util.List;
+import models.Idea;
 import models.User;
 
 import models.Valid;
@@ -114,7 +116,8 @@ public class Users extends Controller {
     public static void show(String username) {
         User user = User.find("byUsernameAndValid", username, Valid.Y).first();
         notFoundIfNull(user);
-        render(user);
+        List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("_created").fetchAll();
+        render(user, ideas);
     }
 
     public static void forgotUsername() {

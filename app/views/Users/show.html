@@ -3,6 +3,16 @@
 
 <h2>${user.username}</h2>
 
-<p>
-	More to come. Stay tuned.
-</p>
+<dl class="nice contained tabs">
+    <dd><a href="#nice1" class="active">Ideas</a></dd>
+    <dd><a href="#nice2">Comments</a></dd>
+</dl>
+
+<ul class="nice tabs-content contained">
+    <li class="active" id="nice1Tab">
+        #{list items:ideas, as:'idea'}
+            #{idea full:false,idea:idea/}
+        #{/list}
+    </li>
+    <li id="nice2Tab">${user.username}'s comments will go here </li>
+</ul>

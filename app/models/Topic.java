@@ -1,12 +1,14 @@
 package models;
 
 import com.google.code.morphia.annotations.Entity;
+import play.modules.morphia.Model.AutoTimestamp;
 
 /**
  *
  * @author goof
  */
 @Entity(noClassnameStored=true)
+@AutoTimestamp
 public class Topic extends TitleModel {
 
     public Topic() {
