@@ -5,10 +5,8 @@ import com.google.code.morphia.annotations.Reference;
 import play.data.validation.MaxSize;
 import play.data.validation.MinSize;
 import play.data.validation.Required;
-import play.modules.morphia.Model.AutoTimestamp;
 
 @Entity(noClassnameStored = true)
-@AutoTimestamp
 public class Comment extends BaseModel {
     
     @Required(message="Comment is required")

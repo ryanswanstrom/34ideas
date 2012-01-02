@@ -17,7 +17,6 @@ POST    /add/idea                               IdeasSecure.create
 GET     /newest/{topicPath}                     Ideas.newest
 GET     /popular/{topicPath}                    Ideas.popular
 POST    /add/comment/{ideaId}                   CommentsSecure.create
-GET     /update                                 Application.update
 
 #User
 GET     /profile/{username}                     Users.show

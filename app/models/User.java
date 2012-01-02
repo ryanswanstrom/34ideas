@@ -7,10 +7,8 @@ import java.util.Date;
 import java.util.UUID;
 import play.data.validation.Email;
 import play.data.validation.Required;
-import play.modules.morphia.Model.AutoTimestamp;
 
 @Entity(noClassnameStored = true)
-@AutoTimestamp
 public class User extends BaseModel {
 
     @Required
