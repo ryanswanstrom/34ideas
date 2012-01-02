@@ -2,11 +2,10 @@ package controllers;
 
 import java.util.List;
 import java.util.Random;
+import models.BaseModel.Valid;
 import models.Comment;
 import models.Idea;
 import models.Topic;
-import models.Valid;
-import play.data.validation.Validation;
 import play.mvc.Controller;
 
 /**

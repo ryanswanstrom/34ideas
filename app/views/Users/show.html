@@ -13,6 +13,9 @@
         #{list items:ideas, as:'idea'}
             #{idea full:false,idea:idea/}
         #{/list}
+        #{else}
+            Well, <strong>${user}</strong> does not have any ideas. How sad.
+        #{/else}
     </li>
     <li id="nice2Tab">${user.username}'s comments will go here </li>
 </ul>

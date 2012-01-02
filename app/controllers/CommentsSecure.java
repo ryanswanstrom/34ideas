@@ -1,9 +1,9 @@
 package controllers;
 
+import models.BaseModel.Valid;
 import models.Comment;
 import models.Idea;
 import models.User;
-import models.Valid;
 import play.data.validation.Validation;
 import play.mvc.Controller;
 import play.mvc.With;

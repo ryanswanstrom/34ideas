@@ -6,10 +6,10 @@ import java.security.SecureRandom;
 import java.util.Date;
 
 import java.util.List;
+import models.BaseModel.Valid;
 import models.Idea;
 import models.User;
 
-import models.Valid;
 import org.apache.commons.mail.SimpleEmail;
 
 import play.Logger;
@@ -116,7 +116,7 @@ public class Users extends Controller {
     public static void show(String username) {
         User user = User.find("byUsernameAndValid", username, Valid.Y).first();
         notFoundIfNull(user);
-        List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("_created").fetchAll();
+        List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("created").fetchAll();
         render(user, ideas);
     }
 

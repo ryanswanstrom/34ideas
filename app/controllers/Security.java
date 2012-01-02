@@ -5,9 +5,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
+import models.BaseModel.Valid;
 import models.User;
 
-import models.Valid;
 import org.apache.commons.lang.StringUtils;
 
 import play.Logger;

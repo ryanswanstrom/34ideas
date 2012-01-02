@@ -14,6 +14,9 @@ import play.modules.morphia.Model;
  * @author goof
  */
 public class BaseModel extends Model {
+
+    public enum Valid {Y,N}
+    
     public Date created;
     @Required(message="valid indicator required")
     public Valid valid;

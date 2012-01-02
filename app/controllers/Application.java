@@ -1,8 +1,8 @@
 package controllers;
 
 import java.util.List;
+import models.BaseModel.Valid;
 import models.Topic;
-import models.Valid;
 import play.mvc.*;
 
 public class Application extends Controller {
