@@ -4,7 +4,7 @@ import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Reference;
 import play.data.validation.Required;
 
-@Entity
+@Entity(noClassnameStored=true)
 public class Vote extends BaseModel {
 
     public enum VoteType {
