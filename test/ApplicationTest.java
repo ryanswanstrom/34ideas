@@ -1,5 +1,6 @@
 
 import org.junit.Test;
+import play.Logger;
 import play.mvc.Http.Response;
 import play.test.FunctionalTest;
 
@@ -63,14 +64,22 @@ public class ApplicationTest extends FunctionalTest {
         assertContentMatch("34ideas", response);
         assertContentMatch("Terms of Service", response);
     }
-
-//    @Test
-//    public void testUnknownPage() {
-//        Response response = GET("/pagedoesnotexist");
-//        assertIsOk(response);
-//        assertContentType("text/html", response);
-//        assertCharset(play.Play.defaultWebEncoding, response);
-//        assertContentMatch("Not Found", response);
-//    }
+    
+    @Test
+    public void allUsersPage() {
+        Response response = GET("/all/users");
+        assertIsOk(response);
+        assertContentType("text/html", response);
+        assertCharset(play.Play.defaultWebEncoding, response);
+        assertContentMatch("user100", response);
+    }
+    
+    @Test
+    public void allVotesPage() {
+        Response response = GET("/all/votes");
+        assertIsOk(response);
+        assertContentType("text/html", response);
+        assertCharset(play.Play.defaultWebEncoding, response);
+    }
     
 }

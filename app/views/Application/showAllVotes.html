@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set 'title'} Latest Votes #{/set}
+
+<ul>
+    #{list votes}
+        <li> ${_.type}, ${_.created.since()} </li>
+    #{/list}
+    #{else}
+        Sorry, no votes. Be the first to vote. #{a @Users.register()}Sign up#{/a}
+    #{/else}
+</ul>

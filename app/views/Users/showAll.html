@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set 'title'} All users #{/set}
+
+<ul>
+    #{list users}
+        <li> #{a @Users.show(_.username)}${_.username}#{/a}</li>
+    #{/list}
+    #{else}
+        Sorry, no users. Be the first. #{a @Users.register()}Sign up#{/a}
+    #{/else}
+</ul>

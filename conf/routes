@@ -23,6 +23,10 @@ GET     /profile/{username}                     Users.show
 GET	/register                               Users.register
 POST	/register                               Users.add
 GET     /verify/email/{uuid}                    Users.activate
+GET     /all/users                              Users.showAll
+
+#Vote
+GET     /all/votes                              Application.showAllVotes
 
 
 

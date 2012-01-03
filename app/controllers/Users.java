@@ -119,6 +119,11 @@ public class Users extends Controller {
         List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("-created").fetchAll();
         render(user, ideas);
     }
+    
+    public static void showAll() {
+        List<User> users = User.find("byValid", Valid.Y).order("-created").fetch(10);
+        render(users);
+    }
 
     public static void forgotUsername() {
         render();
