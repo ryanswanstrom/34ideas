@@ -27,7 +27,7 @@ BODY {
     background: url(/public/images/check.png) 2px center no-repeat;
 }
 .bad {
-    background: url(/public/images/cross.png) 0 0 no-repeat;
+    background: url(/public/images/cross.png) 2px center no-repeat;
 }
 
 /* -------------------------------------------------- 
