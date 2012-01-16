@@ -3,7 +3,8 @@
 
 <div class="row">
     <div class="five columns centered">
-        <article>			
+        <article>
+            <header><h2>Login</h2></header>			
             #{form @authenticate(), class:'nice'}
 
             #{if flash.error}
@@ -18,7 +19,7 @@
             #{/if}
 
             <label for="username">&{'secure.username'}</label>
-            <input type="text" name="username" id="username" value="${flash.username}" class="medium input-text" />
+            <input type="text" name="username" id="username" value="${flash.username}" class="medium input-text" autofocus />
 
             <label for="password">&{'secure.password'}</label>
             <input type="password" name="password" id="password" value="" class="medium input-text"/>

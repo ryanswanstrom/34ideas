@@ -10,7 +10,7 @@
 
             #{form @Users.add(), class:'nice' }	
             <label for="username" >Username</label>
-            <input type="text" name="username" value="${flash.username}" class="medium input-text"/> 
+            <input type="text" name="username" value="${flash.username}" class="medium input-text" autofocus /> 
             #{ifError 'username'} <small class="error">#{error 'username' /}</small> #{/ifError}
 
             <label for="email" >Email</label>
