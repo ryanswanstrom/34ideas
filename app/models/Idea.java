@@ -67,8 +67,15 @@ public class Idea extends TitleModel {
     }
 
     public <T extends Model> T vote(String value) {
+        return this.vote(value, null);
+    }
+    
+    public <T extends Model> T vote(String value, String username) {        
         Vote vote = new Vote();
         vote.idea = this;
+        if (StringUtils.isNotBlank(username)) {
+            vote.user = User.find("byUsernameAndValid", username, Valid.Y).first();
+        }
         if (VoteType.GOOD.toString().equals(value)) {
             this.gVotes++;
             vote.type = VoteType.GOOD;

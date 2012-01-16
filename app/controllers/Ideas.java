@@ -46,7 +46,7 @@ public class Ideas extends Controller {
     public static void vote(String id, String value) {
         Idea idea = Idea.findById(id);
         notFoundIfNull(idea);
-        idea.vote(value);
+        idea.vote(value, Security.connected());
         randomIdea(idea.topic.path);
     }
 
