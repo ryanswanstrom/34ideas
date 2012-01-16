@@ -1,6 +1,7 @@
 #{extends 'main.html' /}
 #{set 'title'} Latest Votes #{/set}
 
+<h5> Total Votes: ${numVotes}</h5>
 <ul>
     #{list votes}
         <li> ${_.type}, ${_.created.since()} </li>

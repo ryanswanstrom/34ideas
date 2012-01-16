@@ -27,6 +27,7 @@ public class Application extends Controller {
      */
     public static void showAllVotes() {
         List<Vote> votes = Vote.find("byValid", Valid.Y).order("-created").fetch(10);
-        render(votes);
+        long numVotes = Vote.count();
+        render(votes, numVotes);
     }
 }
