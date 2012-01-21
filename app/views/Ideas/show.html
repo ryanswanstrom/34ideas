@@ -12,7 +12,7 @@
 
             <div class="row">
                 <div class="offset-by-two">                    
-                    <h3>Thoughts</h3>
+                    <h3>Feedback</h3>
 
                     #{list idea.getComments() }
                     <div class="row">
@@ -32,7 +32,7 @@
                     </div>
                     #{/list}
                     #{else}
-                    <p>No one has any thoughts about this idea.  I bet you do.</p>
+                    <p>No one has any feedback about this idea.  I bet you do.</p>
                     #{/else}
 
                     #{if session.get('username')}
@@ -45,8 +45,8 @@
                         </div>
                         #{/ifError}
 
-                        <textarea rows="3" cols="60" name="comment.txt" placeholder="What are your thoughts about this idea?">${comment.txt}</textarea>
-                        <input type="submit" value="Add Thought" class="nice round button small blue" />
+                        <textarea rows="3" cols="60" name="comment.txt" placeholder="What is your feedback about this idea?">${comment.txt}</textarea>
+                        <input type="submit" value="Add Feedback" class="round button small blue" />
                         #{/form}
                     </div>
                     #{/if}

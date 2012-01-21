@@ -7,6 +7,7 @@ import java.util.Date;
 
 import java.util.List;
 import models.BaseModel.Valid;
+import models.Comment;
 import models.Idea;
 import models.User;
 
@@ -117,7 +118,8 @@ public class Users extends Controller {
         User user = User.find("byUsernameAndValid", username, Valid.Y).first();
         notFoundIfNull(user);
         List<Idea> ideas = Idea.find("byUserAndValid", user, Valid.Y).order("-created").fetchAll();
-        render(user, ideas);
+        List<Comment> comments = Comment.find("byUserAndValid", user, Valid.Y).order("-created").fetchAll();
+        render(user, ideas, comments);
     }
     
     public static void showAll() {
